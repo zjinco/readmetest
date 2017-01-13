@@ -1,95 +1,95 @@
-# ¸ÅÊö
-POIËÑË÷·şÎñÖ÷Òª°üÀ¨Â½Í¼¹Ø¼ü×ÖËÑË÷£¬º£Í¼¹Ø¼ü×ÖËÑË÷£¬Â½Í¼ÈÈÇø£¬º£Í¼ÈÈÇøµÄ·şÎñÓëÊı¾İ²¿Êğ¡£
-# ÒÀÀµ»·¾³°²×°
-## ÏµÍ³È·ÈÏ
-·şÎñ¿ÉÒÔÖ§³ÖÒÔÏÂÏµÍ³
+# æ¦‚è¿°
+POIæœç´¢æœåŠ¡ä¸»è¦åŒ…æ‹¬é™†å›¾å…³é”®å­—æœç´¢ï¼Œæµ·å›¾å…³é”®å­—æœç´¢ï¼Œé™†å›¾çƒ­åŒºï¼Œæµ·å›¾çƒ­åŒºçš„æœåŠ¡ä¸æ•°æ®éƒ¨ç½²ã€‚
+# ä¾èµ–ç¯å¢ƒå®‰è£…
+## ç³»ç»Ÿç¡®è®¤
+æœåŠ¡å¯ä»¥æ”¯æŒä»¥ä¸‹ç³»ç»Ÿ
 
-| ĞòºÅ | ÏµÍ³Ãû³Æ | °æ±¾ | ËµÃ÷ |
+| åºå· | ç³»ç»Ÿåç§° | ç‰ˆæœ¬ | è¯´æ˜ |
 | --- | --- | --- | --- |
 | 1 | CentOS | 6.5 |   |
-## ·şÎñÈ·ÈÏ
+## æœåŠ¡ç¡®è®¤
 
-| ĞòºÅ | ÒÀÀµ·şÎñ | °æ±¾ | °²×°²Î¿¼ÃüÁî |
+| åºå· | ä¾èµ–æœåŠ¡ | ç‰ˆæœ¬ | å®‰è£…å‚è€ƒå‘½ä»¤ |
 | --- | --- | --- | --- |
-| 1 | Apache°²×° | 2.2 | yum install httpd |
-| 2 | PostgreSQL | 9.3 | ²Î¼ûPostgreSQL°²×°ÎÄµµ |
-| 3 | postgis | 2.1 | ²Î¼ûPostgreSQL°²×°ÎÄµµ |
-| 4 | Java runtime | 1.7 | ²Î¼ûjdkÓëtomcat²¿Êğ½Ì³Ì |
-| 5 | Tomcat | 7 | ²Î¼ûjdkÓëtomcat²¿Êğ½Ì³Ì |
-| 6 | 8080¶Ë¿Ú¿ªÆô |   | ×¢1 |
+| 1 | Apacheå®‰è£… | 2.2 | yum install httpd |
+| 2 | PostgreSQL | 9.3 | å‚è§PostgreSQLå®‰è£…æ–‡æ¡£ |
+| 3 | postgis | 2.1 | å‚è§PostgreSQLå®‰è£…æ–‡æ¡£ |
+| 4 | Java runtime | 1.7 | å‚è§jdkä¸tomcatéƒ¨ç½²æ•™ç¨‹ |
+| 5 | Tomcat | 7 | å‚è§jdkä¸tomcatéƒ¨ç½²æ•™ç¨‹ |
+| 6 | 8080ç«¯å£å¼€å¯ |   | æ³¨1 |
 
-×¢1£º  
+æ³¨1ï¼š  
 
     /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT  
     /etc/rc.d/init.d/iptables save  
     service iptables restart  
 
-# ËÑË÷·şÎñ°²×°
+# æœç´¢æœåŠ¡å®‰è£…
 
-## Apache·şÎñ
+## ApacheæœåŠ¡
 
-¿½±´libxxngc.so µ½ /usr/lib  
+æ‹·è´libxxngc.so åˆ° /usr/lib  
 
     cp /HDMap1.0/install/search/libxxngc.so /usr/lib/
 
-¿½±´libpoi\_search.soµ½  /usr/lib64  
+æ‹·è´libpoi\_search.soåˆ°  /usr/lib64  
 
-    cp /HDMap1.0/install/search/libpoi\_search.so /usr/lib64/
+    cp /HDMap1.0/install/search/libpoi_search.so /usr/lib64/
 
-## Tomcat·şÎñ
+## TomcatæœåŠ¡
 
-É¾³ı&lt;Tomcat\_Root\_Path&gt;/webapps/ROOT ÖĞµÄËùÓĞÄÚÈİ  
+åˆ é™¤&lt;Tomcat\_Root\_Path&gt;/webapps/ROOT ä¸­çš„æ‰€æœ‰å†…å®¹  
 
     rm /usr/local/tomcat7/webapps/ROOT  
-¿½±´MapApi.war µ½ &lt;Tomcat\_Root\_Path&gt;/webappsÖĞ  
+æ‹·è´MapApi.war åˆ° &lt;Tomcat\_Root\_Path&gt;/webappsä¸­  
 
     cp /HDMap1.0/install/search/MapApi.war /usr/local/tomcat7/webapps
 
-# Êı¾İ²¿Êğ
-## Â½Í¼£º
-¿½±´¸½¼şÖĞµÄdataÄ¿Â¼µ½Ö¸¶¨Ä¿Â¼ÖĞ£¬±¾Ö¸ÄÏÊ¹ÓÃ/HDMap1.0/searchdata/land
-## º£Í¼£º
-½«Êı¾İµ¼ÈëPostgreSQLÊı¾İ¿â¡£
-ÒÔÊı¾İÎÄ¼ş¡¾sea_poi.sql¡¿ÎªÀı£¬¸ÃÎÄ¼ş´æ·ÅÔÚÔÚ/HDMap1.0/searchdata/sea
-Ö´ĞĞÒÔÏÂÃüÁî£º
+# æ•°æ®éƒ¨ç½²
+## é™†å›¾ï¼š
+æ‹·è´é™„ä»¶ä¸­çš„dataç›®å½•åˆ°æŒ‡å®šç›®å½•ä¸­ï¼Œæœ¬æŒ‡å—ä½¿ç”¨/HDMap1.0/searchdata/land
+## æµ·å›¾ï¼š
+å°†æ•°æ®å¯¼å…¥PostgreSQLæ•°æ®åº“ã€‚
+ä»¥æ•°æ®æ–‡ä»¶ã€sea_poi.sqlã€‘ä¸ºä¾‹ï¼Œè¯¥æ–‡ä»¶å­˜æ”¾åœ¨åœ¨/HDMap1.0/searchdata/sea
+æ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 
     psql -U postgres postgis < /HDMap1.0/searchdata/sea/sea_poi.sql
 
-# ÅäÖÃÎÄ¼şĞŞ¸Ä
-## TomcatÅäÖÃ
-´ò¿ª&lt;Tomcat\_Root\_Path&gt;/conf/server.xmlÎÄ¼ş
-ÔÚHost½ÚµãÄÚÌí¼ÓÏÂÃæÄÚÈİ
+# é…ç½®æ–‡ä»¶ä¿®æ”¹
+## Tomcaté…ç½®
+æ‰“å¼€&lt;Tomcat\_Root\_Path&gt;/conf/server.xmlæ–‡ä»¶
+åœ¨HostèŠ‚ç‚¹å†…æ·»åŠ ä¸‹é¢å†…å®¹
 
     <Context path="/" docBase="MapApi" reloadable="true" />
 
-ÔÚConnector½ÚµãÖĞÌí¼Ó URIEncoding=&quot;UTF-8&quot; ÊôĞÔ
+åœ¨ConnectorèŠ‚ç‚¹ä¸­æ·»åŠ  URIEncoding=&quot;UTF-8&quot; å±æ€§
 
     <Connector port="8080" protocol="HTTP/1.1"
            connectionTimeout="20000"
            redirectPort="8443" URIEncoding="UTF-8" />
   
 
-## MapApiÅäÖÃ
-ÒÔ°²×°Â·¾¶Îª/HDMap1.0/£¬Êı¾İ´æ·ÅÂ·¾¶Îª/HDMap1.0/searchdata/land/ÎªÀı£¬ĞŞ¸ÄÈçÏÂ£º
-´ò¿ª&lt;Tomcat\_Root\_Path&gt;/webapps/MapApi/WEB-INF/classes/META-INF/app.properties
+## MapApié…ç½®
+ä»¥å®‰è£…è·¯å¾„ä¸º/HDMap1.0/ï¼Œæ•°æ®å­˜æ”¾è·¯å¾„ä¸º/HDMap1.0/searchdata/land/ä¸ºä¾‹ï¼Œä¿®æ”¹å¦‚ä¸‹ï¼š
+æ‰“å¼€&lt;Tomcat\_Root\_Path&gt;/webapps/MapApi/WEB-INF/classes/META-INF/app.properties
 
-ĞŞ¸ÄÒÔÏÂÄÚÈİ£º
+ä¿®æ”¹ä»¥ä¸‹å†…å®¹ï¼š
 
-    limit.max=500 # Êı¾İ²éÑ¯×î´óÖµ
-    limit.max.address=100 # Êı¾İ²éÑ¯×î´óÖµ(µØÖ·)
-    path.log=/HDMap1.0/log/gisserver.log # ÈÕÖ¾ÎÄ¼ş  
-    path.poidata=/HDMap1.0/searchdata/land/ # Êı¾İÎÄ¼şÄ¿Â¼
-    path.poidiffdata= # ²îÒìÎÄ¼şÄ¿Â¼(ÔİÊ±Îª¿Õ)
-    path.adddata=/HDMap1.0/searchdata/land/addr.db # µØÖ·¿â
-    path.districtdata=/HDMap1.0/searchdata/land/districtblock.db # ĞĞÕşÇø»®¿é
-    path.poitypedata=/HDMap1.0/searchdata/land/poitype.xml #ÀàĞÍ
-    path.geometrydata=/HDMap1.0/searchdata/land/admin3.json # GeoMetryÊı¾İ  
+    limit.max=500 # æ•°æ®æŸ¥è¯¢æœ€å¤§å€¼
+    limit.max.address=100 # æ•°æ®æŸ¥è¯¢æœ€å¤§å€¼(åœ°å€)
+    path.log=/HDMap1.0/log/gisserver.log # æ—¥å¿—æ–‡ä»¶  
+    path.poidata=/HDMap1.0/searchdata/land/ # æ•°æ®æ–‡ä»¶ç›®å½•
+    path.poidiffdata= # å·®å¼‚æ–‡ä»¶ç›®å½•(æš‚æ—¶ä¸ºç©º)
+    path.adddata=/HDMap1.0/searchdata/land/addr.db # åœ°å€åº“
+    path.districtdata=/HDMap1.0/searchdata/land/districtblock.db # è¡Œæ”¿åŒºåˆ’å—
+    path.poitypedata=/HDMap1.0/searchdata/land/poitype.xml #ç±»å‹
+    path.geometrydata=/HDMap1.0/searchdata/land/admin3.json # GeoMetryæ•°æ®  
     type.poimatch=2 #
 
-# ²¿Êğ²âÊÔ
+# éƒ¨ç½²æµ‹è¯•
 
-**ÖØÆôTomcat**
-**Â½Í¼²âÊÔ²Î¿¼Á´½Ó£º**
-http://[IP]:8080/v1/poi?query=%E5%AD%A6%E6%A0%A1&amp;region=±±¾©ÊĞ
-**º£Í¼²âÊÔ²Î¿¼Á´½Ó£º**  
+**é‡å¯Tomcat**
+**é™†å›¾æµ‹è¯•å‚è€ƒé“¾æ¥ï¼š**
+http://[IP]:8080/v1/poi?query=%E5%AD%A6%E6%A0%A1&amp;region=åŒ—äº¬å¸‚
+**æµ·å›¾æµ‹è¯•å‚è€ƒé“¾æ¥ï¼š**  
 http://[IP]:8080/v1/poi?query=%E9%94%9A%E5%9C%B0&amp;location=39.99188,116.90957&amp;radius=320000&amp;type=1
