@@ -55,14 +55,14 @@
 
     su postgres  
     cd /  
-    /usr/pgsql-9.3/bin/pg\_ctl -D /usr/pgsql-9.3/data start  
+    /usr/pgsql-9.3/bin/pg_ctl -D /usr/pgsql-9.3/data start  
     psql  
     create database postgis;  
     \c postgis;  
     create extension postgis;  
     \q  
     cd /usr/pgsql-9.3/share/contrib/postgis-2.1/  
-    psql -d postgis -f spatial\_ref\_sys.sql  
+    psql -d postgis -f spatial_ref_sys.sql  
 # 设置POSTGRESQL服务开机启动  
 ## 切换为root用户  
 
@@ -70,7 +70,7 @@
 ## 进入postgresql\_start.sh存放目录  
 ## 拷贝postgresql\_start.sh到/etc/rc.d/init.d/  
 
-    cp postgresql\_start.sh /etc/rc.d/init.d/postgresql  
+    cp postgresql_start.sh /etc/rc.d/init.d/postgresql  
 ## 权限设置  
 
     chown root.root /etc/rc.d/init.d/postgresql  
