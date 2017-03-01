@@ -1,13 +1,13 @@
-# 使用PostgreSQL源  
-## 设置代理  
+# 使用PostgreSQL源 
+## 设置代理 
 
-    wget http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9.3-3.noarch.rpm  
-## 安装yum源  
+    wget http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9.3-3.noarch.rpm
+## 安装yum源
 
-    rpm -ivh pgdg-centos93-9.3-3.noarch.rpm  
+    rpm -ivh pgdg-centos93-9.3-3.noarch.rpm
 ## 配置文件  
 
-    vim /etc/yum.repos.d/CentOS-Base.repo  
+    vim /etc/yum.repos.d/CentOS-Base.repo
 在 [base] 和 [updates] 区域中各加入一行  
 
     exclude=postgresql\*  
@@ -26,15 +26,15 @@
     mkdir /usr/pgsql-9.3/data  
 ## 修改权限  
 
-    chmod 777 -R /usr/pgsql-9.3/  
-    chgrp -R postgres /usr/pgsql-9.3/  
-    chown -R postgres /usr/pgsql-9.3/  
+    chmod 777 -R /usr/pgsql-9.3/
+    chgrp -R postgres /usr/pgsql-9.3/
+    chown -R postgres /usr/pgsql-9.3/
 ## 更改用户  
 
     su postgres  
 ## 数据库初始化  
 
-    /usr/pgsql-9.3/bin/initdb -D /usr/pgsql-9.3/data  
+    /usr/pgsql-9.3/bin/initdb -D /usr/pgsql-9.3/data
 # 使用EPEL源  
 ## 切换为root用户  
 
